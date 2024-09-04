@@ -210,5 +210,26 @@ const pr: Iprofile = {
 
 console.log(pr)
 
+////////////////////////////////////////////////////////////////////////////// Types
 
+type Tname = string
+type TnumBool = number | boolean
 
+type Tprofile = {
+    firstName: Tname
+    age: TnumBool
+    isAdult: TnumBool
+} & Twork
+
+type Twork = {
+    place: Tname
+}
+
+const prT: Tprofile = {
+    firstName: 'Jax',
+    age: 35,
+    isAdult: true,
+    place: 'Wall str.'
+}
+
+console.log(prT)
