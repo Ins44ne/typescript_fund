@@ -155,6 +155,7 @@ console.log(getFullName("Alex", 'Sandy', 'Wopper'))
 
 
 ////////////////////////////////////////////////////////////////////////////// functional overloads
+
 function getInfo(name: string): string;
 function getInfo(age: number): number;
 function getInfo(adult: boolean): boolean;
@@ -172,3 +173,18 @@ console.log(typeof res2)
 const res3 = getInfo(false)
 console.log(res3)
 console.log(typeof res3)
+
+////////////////////////////////////////////////////////////////////////////// Classes
+
+class Animal {
+    private name: string
+
+    constructor(name: string) { this.name = name }
+
+    getName() {
+        return this.name
+    }
+}
+
+const cat = new Animal('cat')
+console.log(cat.getName())
