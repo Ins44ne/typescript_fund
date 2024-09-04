@@ -252,3 +252,7 @@ console.log(`${secondary} ${typeof secondary}`)
 
 
 ////////////////////////////////////////////////////////////////////////////// Assertions
+
+const someValue: any = "qwerty123"
+const strLength: number = (someValue as string).length
+console.log(strLength)
