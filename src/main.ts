@@ -97,3 +97,39 @@ profile.age = null
 profile.isAdult = 25
 console.log(profile)
 
+
+////////////////////////////////////////////////////////////////////////////// Arrays & Tuples
+//Arrays
+const nums: number[] = [1, 2, 3, 4, 5]
+console.log(nums)
+const nums2: Array<number> = [1, 2, 3, 4, 5]
+console.log(nums2)
+
+//Tuples
+const numbers: [number, number] = [1, 2]
+console.log(numbers)
+
+numbers[0] = 21
+numbers[1] = 12
+console.log(numbers)
+
+// Errors
+numbers[0] = 'one'
+numbers[1] = 'two'
+console.log(numbers)
+
+
+
+const diff: [number, string, boolean] = [1, '2', false]
+console.log(diff)
+
+diff[0] = 21
+diff[1] = "12"
+diff[2] = true
+console.log(diff)
+
+// Errors
+diff[0] = 'one'
+diff[1] = 2
+diff[2] = 'true'
+console.log(diff)
