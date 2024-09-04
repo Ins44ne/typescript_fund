@@ -188,3 +188,27 @@ class Animal {
 
 const cat = new Animal('cat')
 console.log(cat.getName())
+
+////////////////////////////////////////////////////////////////////////////// Interfaces
+
+interface Iprofile extends Iwork {
+    firstName: string
+    age: number
+    isAdult: boolean
+}
+
+interface Iwork {
+    place: string
+}
+
+const pr: Iprofile = {
+    firstName: 'Jax',
+    age: 35,
+    isAdult: true,
+    place: 'Wall str.'
+}
+
+console.log(pr)
+
+
+
