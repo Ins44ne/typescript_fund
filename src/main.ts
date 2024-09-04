@@ -4,27 +4,27 @@
 
 //************************String
 
-let firstNameTs: string = "Alex"
-console.log(firstNameTs)
+let firstName: string = "Alex"
+console.log(firstName)
 
-firstNameTs = "Max"
-console.log(firstNameTs)
+firstName = "Max"
+console.log(firstName)
 
 // Error
-firstNameTs = 1
-console.log(firstNameTs)
+firstName = 1
+console.log(firstName)
 
 //************************ Number
 
-let ageTs: number = 25
-console.log(ageTs)
+let age: number = 25
+console.log(age)
 
-ageTs = 30
-console.log(ageTs)
+age = 30
+console.log(age)
 
 // Error
-ageTs = "50"
-console.log(ageTs)
+age = "50"
+console.log(age)
 
 //************************ Boolean
 
@@ -72,4 +72,28 @@ nickName = "AngryBird"
 console.log(nickName)
 
 
+
+////////////////////////////////////////////////////////////////////////////// Object structure
+
+const profile: {
+    firstName: string,
+    age: number,
+    isAdult: boolean,
+} = {
+    firstName: 'Alex',
+    age: 25,
+    isAdult: true
+}
+console.log(profile)
+
+profile.firstName = "Max"
+profile.age = 30
+profile.isAdult = true
+console.log(profile)
+
+// Errors
+profile.firstName = undefined
+profile.age = null
+profile.isAdult = 25
+console.log(profile)
 
