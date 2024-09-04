@@ -133,3 +133,21 @@ diff[0] = 'one'
 diff[1] = 2
 diff[2] = 'true'
 console.log(diff)
+
+
+////////////////////////////////////////////////////////////////////////////// Functions
+function getAge(name?: string): number {
+    console.log(`${name} is 25 years old.`)
+    return 25
+}
+console.log(getAge('Max'))
+
+const getAgeArrow = (name?: string): string => `${name} is 21years old.`
+console.log(getAgeArrow("Ann"))
+
+// REST
+
+function getFullName(firstName: string, ...names: string[]) {
+    return `${firstName} ${names.join(' ')}`
+}
+console.log(getFullName("Alex", 'Sandy', 'Wopper'))
