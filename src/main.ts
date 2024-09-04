@@ -136,6 +136,7 @@ console.log(diff)
 
 
 ////////////////////////////////////////////////////////////////////////////// Functions
+
 function getAge(name?: string): number {
     console.log(`${name} is 25 years old.`)
     return 25
@@ -151,3 +152,23 @@ function getFullName(firstName: string, ...names: string[]) {
     return `${firstName} ${names.join(' ')}`
 }
 console.log(getFullName("Alex", 'Sandy', 'Wopper'))
+
+
+////////////////////////////////////////////////////////////////////////////// functional overloads
+function getInfo(name: string): string;
+function getInfo(age: number): number;
+function getInfo(adult: boolean): boolean;
+function getInfo(value: any): any {
+    return value
+}
+const res = getInfo('hello')
+console.log(res)
+console.log(typeof res)
+
+const res2 = getInfo(25)
+console.log(res2)
+console.log(typeof res2)
+
+const res3 = getInfo(false)
+console.log(res3)
+console.log(typeof res3)
