@@ -1,7 +1,6 @@
 //TS
 
 ////////////////////////////////////////////////////////////////////////////// Basic types
-
 //************************String
 
 let firstName: string = "Alex"
@@ -71,8 +70,6 @@ console.log(nickName)
 nickName = "AngryBird"
 console.log(nickName)
 
-
-
 ////////////////////////////////////////////////////////////////////////////// Object structure
 
 const profile: {
@@ -97,9 +94,9 @@ profile.age = null
 profile.isAdult = 25
 console.log(profile)
 
-
 ////////////////////////////////////////////////////////////////////////////// Arrays & Tuples
 //Arrays
+
 const nums: number[] = [1, 2, 3, 4, 5]
 console.log(nums)
 const nums2: Array<number> = [1, 2, 3, 4, 5]
@@ -118,8 +115,6 @@ numbers[0] = 'one'
 numbers[1] = 'two'
 console.log(numbers)
 
-
-
 const diff: [number, string, boolean] = [1, '2', false]
 console.log(diff)
 
@@ -133,7 +128,6 @@ diff[0] = 'one'
 diff[1] = 2
 diff[2] = 'true'
 console.log(diff)
-
 
 ////////////////////////////////////////////////////////////////////////////// Functions
 
@@ -152,7 +146,6 @@ function getFullName(firstName: string, ...names: string[]) {
     return `${firstName} ${names.join(' ')}`
 }
 console.log(getFullName("Alex", 'Sandy', 'Wopper'))
-
 
 ////////////////////////////////////////////////////////////////////////////// functional overloads
 
@@ -207,7 +200,6 @@ const pr: Iprofile = {
     isAdult: true,
     place: 'Wall str.'
 }
-
 console.log(pr)
 
 ////////////////////////////////////////////////////////////////////////////// Types
@@ -231,9 +223,7 @@ const prT: Tprofile = {
     isAdult: true,
     place: 'Wall str.'
 }
-
 console.log(prT)
-
 
 ////////////////////////////////////////////////////////////////////////////// Enums
 
@@ -250,13 +240,11 @@ const secondary: Colors = Colors.white
 console.log(`${primary} ${typeof primary}`)
 console.log(`${secondary} ${typeof secondary}`)
 
-
 ////////////////////////////////////////////////////////////////////////////// Assertions
 
 const someValue: any = "qwerty123"
 const strLength: number = (someValue as string).length
 console.log(strLength)
-
 
 ////////////////////////////////////////////////////////////////////////////// Generic
 
@@ -272,3 +260,63 @@ function getCarErr<T extends string>(name: T): T {
     return name
 }
 console.log(getCarErr(true))
+
+////////////////////////////////////////////////////////////////////////////// Utility types
+
+interface Iprof {
+    firstName: string
+    age: number
+    isAdult: boolean
+}
+
+// Pick
+
+const prof: Pick<Iprof, 'isAdult'> = {
+    isAdult: true
+}
+console.log(prof)
+
+// Omit
+
+const prof2: Omit<Iprof, 'isAdult'> = {
+    firstName: 'Faith',
+    age: 17
+}
+console.log(prof2)
+
+// Partial
+
+const prof3: Partial<Iprof> = {
+    firstName: 'Axel'
+}
+console.log(prof3)
+
+// Required
+
+const prof4: Required<Iprof> = {
+    firstName: 'Axel',
+    age: 16,
+    isAdult: false
+
+}
+console.log(prof4)
+
+// ReadOnly
+
+const prof5: Readonly<Pick<Iprof, "firstName">> = {
+    firstName: 'Axel',
+}
+console.log(prof5)
+
+// Error
+prof5.firstName = "Alex"
+console.log(prof5)
+
+// Record
+
+const store: Record<string, number> = {
+    "apple": 500,
+    'pear': 100,
+    'peach': 50
+}
+console.log(store)
