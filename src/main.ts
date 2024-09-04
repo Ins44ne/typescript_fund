@@ -233,3 +233,22 @@ const prT: Tprofile = {
 }
 
 console.log(prT)
+
+
+////////////////////////////////////////////////////////////////////////////// Enums
+
+enum Colors {
+    red,
+    green,
+    blue,
+    white,
+    black
+}
+
+const primary: Colors = Colors.black
+const secondary: Colors = Colors.white
+console.log(`${primary} ${typeof primary}`)
+console.log(`${secondary} ${typeof secondary}`)
+
+
+////////////////////////////////////////////////////////////////////////////// Assertions
