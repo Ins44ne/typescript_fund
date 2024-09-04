@@ -256,3 +256,19 @@ console.log(`${secondary} ${typeof secondary}`)
 const someValue: any = "qwerty123"
 const strLength: number = (someValue as string).length
 console.log(strLength)
+
+
+////////////////////////////////////////////////////////////////////////////// Generic
+
+function getCar<T>(name: T): T {
+    return name
+}
+console.log(getCar("Tesla"))
+console.log(getCar("Tesla" as string))
+
+// Error
+
+function getCarErr<T extends string>(name: T): T {
+    return name
+}
+console.log(getCarErr(true))
